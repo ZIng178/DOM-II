@@ -85,13 +85,23 @@ window.addEventListener('resize', () => {
     alert('you have resized the window');
 });
 
-//10. . adding effects to the boat image 
- const boatImage= document.querySelector('#boatImage')
 
- boatImage.addEventListener("dblclick", ()=>{
-  boatImage.style.transform='scale(1)';
-  boatImage.style.transition="all 0.3s";
- })
+//10. copy event 
+const copyText = document.querySelectorAll("p");
+copyText.forEach(para => {
+  para.addEventListener("copy", () => {
+    alert(`Please don't copy the content here!`);
+  });
+});
+
+
+const navElements = document.querySelectorAll(".nav-link");
+
+navElements.forEach(e => {
+  e.addEventListener("click", e => {
+    e.preventDefault();
+  });
+});
 
 
 
